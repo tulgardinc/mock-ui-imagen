@@ -1,14 +1,14 @@
 export default function Button(props: {
-  onClick: Function;
-  value: string;
-  color: string;
+    onClick: Function;
+    value: string;
+    color: string;
 }) {
-  return (
-    <div
-      className={`hover:cursor-pointer bg-${props.color}-500 text-white font-bold text-lg box-border px-3 py-1 rounded-lg flex-grow-0 text-center`}
-      onClick={() => props.onClick()}
-    >
-      {props.value}
-    </div>
-  );
+    return (
+        <div
+            className={`hover:cursor-pointer ${props.color} text-white font-bold text-lg box-border px-3 py-1 rounded-lg flex-grow-0 text-center`}
+            onClick={() => props.onClick()}
+        >
+            {props.value}
+        </div>
+    );
 }
