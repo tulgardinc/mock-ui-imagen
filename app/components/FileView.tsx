@@ -1,47 +1,26 @@
 import { FaFile, FaSearch } from "react-icons/fa";
 import ListItem from "./ListItem";
 import { useState } from "react";
-import { arrayBuffer } from "stream/consumers";
 import PanelContainer from "./PanelContainer";
 import Tag from "./Tag";
+import SearchBar from "./SearchBar";
+import TagQuerry from "./TagQuerry";
 
 export default function FileView() {
   const [selected, setSelected] = useState<number[]>([]);
 
   return (
     <div>
-      <PanelContainer>
-        <div className="flex w-full border-b-4 items-center">
-          <input
-            className="mr-4 flex-grow outline-none"
-            type="text"
-            placeholder="Search file by name"
-          />
-          <span>
-            <FaSearch
-              color="gray"
-              className="mr-2 hover:cursor-pointer"
-              size={17}
-            />
-          </span>
-        </div>
-      </PanelContainer>
-      <PanelContainer>
-        <input
-          className="w-full border-b-4 flex-grow outline-none"
-          type="text"
-          placeholder="Add tag to querry"
-        />
-        <div className="bg-gray-50 mt-5 rounded-lg shadow-inner min-h-32 mb-6 box-border p-3">
-          <Tag />
-          <Tag />
-          <Tag />
-          <Tag />
-          <Tag />
-          <Tag />
-          <Tag />
-        </div>
-      </PanelContainer>
+      <SearchBar />
+      <TagQuerry>
+        <Tag />
+        <Tag />
+        <Tag />
+        <Tag />
+        <Tag />
+        <Tag />
+        <Tag />
+      </TagQuerry>
       <PanelContainer>
         {[...Array(9)].map((_, i) => (
           <FileRow
