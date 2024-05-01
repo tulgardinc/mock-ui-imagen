@@ -5,6 +5,8 @@ import FileView from "../components/FileView";
 import PanelContainer from "../components/PanelContainer";
 import { IoIosArrowDropdown } from "react-icons/io";
 import Title from "../components/Title";
+import TagQuerry from "../components/TagQuerry";
+import Tag from "../components/Tag";
 
 export default function Train() {
     return (
@@ -27,8 +29,14 @@ export default function Train() {
                 </div>
             </PanelContainer>
             <Title>Training Data</Title>
-            <FileView />
-            <div className="mt-5">
+            <FileView search={true} editable={false} selectable={true} />
+            <Title>Output Tags</Title>
+            <TagQuerry placeholder="Tags for output">
+                <Tag removeable={true} />
+                <Tag removeable={true} />
+                <Tag removeable={true} />
+            </TagQuerry>
+            <div className="mt-5 mb-5">
                 <Button color="bg-red-500" onClick={() => {}} value="Train" />
             </div>
         </div>

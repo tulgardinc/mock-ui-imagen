@@ -1,16 +1,18 @@
 "use client";
-
 import { IoIosArrowDropdown } from "react-icons/io";
 import FileView from "../components/FileView";
 import PanelContainer from "../components/PanelContainer";
 import Title from "../components/Title";
 import Button from "../components/Button";
+import TagQuerry from "../components/TagQuerry";
 
 export default function Run() {
     return (
         <div>
             <Title>Select Input Data</Title>
-            <FileView />
+            <FileView search={true} editable={false} selectable={true} />
+            <Title>Select Output Tags</Title>
+            <TagQuerry placeholder="Output tags"></TagQuerry>
             <PanelContainer>
                 <div className="flex justify-between">
                     <div className="flex">
