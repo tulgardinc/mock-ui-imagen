@@ -53,7 +53,7 @@ export default function NavBar() {
                 router.push("/train");
                 break;
             case "scientist":
-                setNavLinks([run, runResults]);
+                setNavLinks([upload, run, runResults]);
                 router.push("/run");
                 break;
         }

@@ -8,6 +8,8 @@ import Button from "../components/Button";
 import { IoCloudUploadOutline } from "react-icons/io5";
 import { IoIosAddCircleOutline } from "react-icons/io";
 import { CiCircleRemove } from "react-icons/ci";
+import Title from "../components/Title";
+import FileView from "../components/FileView";
 
 export default function Upload() {
     const list = [0, 0, 0, 0, 0];
@@ -30,25 +32,8 @@ export default function Upload() {
                     {popupToDisplay}
                 </FloatingPanel>
             )}
-            <PanelContainer>
-                <h1 className="text-xl">
-                    (Files From Previous Step If Applicable)
-                </h1>
-                {list.map((_) => (
-                    <ListItem onClick={() => {}}>
-                        <h1>SomeData.mp4</h1>
-                        <h1>24 April 2024</h1>
-                        <div>
-                            <span className="rounded px-1 py-0.5 font-bold bg-green-400 text-white mr-3">
-                                #some-tag
-                            </span>
-                            <span className="rounded px-1 py-0.5 font-bold bg-blue-400 text-white">
-                                #other-tag
-                            </span>
-                        </div>
-                    </ListItem>
-                ))}
-            </PanelContainer>
+            <Title>(Files From Previous Step If Applicable)</Title>
+            <FileView />
             <div className="flex justify-end mt-4">
                 <Button
                     onClick={() => {
@@ -111,6 +96,7 @@ function TagSelector(props: { nextPopup: Function }) {
                 <Tag />
                 <Tag />
                 <Tag />
+                <TagWithData />
             </div>
             <Button
                 color="bg-blue-500"
@@ -128,6 +114,18 @@ function Tag() {
     return (
         <span className="bg-gray-600 inline-block text-white m-1 py-0.5 px-2 rounded">
             #tag
+            <CiCircleRemove className="inline ml-1" color="white" />
+        </span>
+    );
+}
+
+function TagWithData() {
+    return (
+        <span className="bg-gray-600 inline-block text-white m-1 py-0.5 px-2 rounded">
+            #tag with data
+            <span className="bg-gray-800 px-0.5 rounded ml-1" contentEditable>
+                data
+            </span>
             <CiCircleRemove className="inline ml-1" color="white" />
         </span>
     );

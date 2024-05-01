@@ -9,8 +9,14 @@ export default function ListItem(props: {
     const [bgc, setBgc] = useState("bg-white");
 
     useEffect(() => {
-        setBgc(props.selected ? "bg-sky-100" : "bg-white");
-    }, [props.selected]);
+        setBgc(
+            props.selected
+                ? "bg-sky-100"
+                : props.color
+                ? props.color
+                : "bg-white"
+        );
+    }, [props.selected, props.color]);
 
     return (
         <div
