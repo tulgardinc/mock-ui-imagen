@@ -10,6 +10,8 @@ import { IoIosAddCircleOutline } from "react-icons/io";
 import { CiCircleRemove } from "react-icons/ci";
 import Title from "../components/Title";
 import FileView from "../components/FileView";
+import TagWithData from "../components/TagWithData";
+import Tag from "../components/Tag";
 
 export default function Upload() {
     const list = [0, 0, 0, 0, 0];
@@ -33,16 +35,22 @@ export default function Upload() {
                 </FloatingPanel>
             )}
             <Title>(Files From Previous Step If Applicable)</Title>
-            <FileView />
-            <div className="flex justify-end mt-4">
-                <Button
-                    onClick={() => {
-                        onUploadClick();
-                    }}
-                    value="Upload Files"
-                    color="bg-red-500"
-                />
-            </div>
+            <FileView
+                search={true}
+                editable={false}
+                selectable={false}
+            ></FileView>
+            <PanelContainer>
+                <div className="flex justify-end">
+                    <Button
+                        onClick={() => {
+                            onUploadClick();
+                        }}
+                        value="Upload Files"
+                        color="bg-red-500"
+                    />
+                </div>
+            </PanelContainer>
         </main>
     );
 }
@@ -107,27 +115,6 @@ function TagSelector(props: { nextPopup: Function }) {
                 value="Next"
             />
         </div>
-    );
-}
-
-function Tag() {
-    return (
-        <span className="bg-gray-600 inline-block text-white m-1 py-0.5 px-2 rounded">
-            #tag
-            <CiCircleRemove className="inline ml-1" color="white" />
-        </span>
-    );
-}
-
-function TagWithData() {
-    return (
-        <span className="bg-gray-600 inline-block text-white m-1 py-0.5 px-2 rounded">
-            #tag with data
-            <span className="bg-gray-800 px-0.5 rounded ml-1" contentEditable>
-                data
-            </span>
-            <CiCircleRemove className="inline ml-1" color="white" />
-        </span>
     );
 }
 

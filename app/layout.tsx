@@ -21,7 +21,7 @@ export default function RootLayout({
         <div className="w-1/5">
           <NavBar />
         </div>
-        <div className="flex-grow flex flex-col justify-start items-center">
+        <div className="h-screen overflow-auto flex-grow flex flex-col justify-start items-center">
           <div className=" w-4/5">{children}</div>
         </div>
       </body>
