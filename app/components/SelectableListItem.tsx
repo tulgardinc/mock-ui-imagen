@@ -8,6 +8,7 @@ export default function SelectableListItem(props: {
   children: React.ReactNode;
   selected: boolean;
   color?: string;
+  margin?: string;
 }) {
   const [bgc, setBgc] = useState("bg-white");
 
@@ -19,7 +20,11 @@ export default function SelectableListItem(props: {
 
   return (
     <div
-      className={`rounded-lg shadow-md box-border px-5 py-2 mb-5 flex justify-between items-center hover:cursor-pointer hover:shadow-lg transition-all ${bgc} ${props.color}`}
+      className={`rounded-lg shadow-md box-border px-5 py-2 ${
+        props.margin ? props.margin : "mb-5"
+      } flex justify-between items-center hover:cursor-pointer hover:shadow-lg transition-all ${bgc} ${
+        props.color
+      }`}
     >
       <div className="mr-5" onClick={() => props.onSelect()}>
         {props.selected ? (

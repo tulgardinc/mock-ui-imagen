@@ -1,7 +1,7 @@
 import PanelContainer from "./PanelContainer";
 
 export default function TagQuerry(props: {
-  children: React.ReactNode;
+  children?: React.ReactNode;
   placeholder: string;
 }) {
   return (

@@ -1,14 +1,12 @@
 "use client";
 
 import PanelContainer from "../components/PanelContainer";
-import ListItem from "../components/ListItem";
 import { ChangeEvent, useState } from "react";
 import FloatingPanel from "../components/FloatingPanel";
 import Button from "../components/Button";
 import SearchBar from "../components/SearchBar";
 import Tag from "../components/Tag";
 import TagQuerry from "../components/TagQuerry";
-import TagWithData from "../components/TagWithData";
 import { IoIosArrowDropdown } from "react-icons/io";
 import SelectableListItem from "../components/SelectableListItem";
 
@@ -22,11 +20,6 @@ export default function Users() {
   return (
     <div>
       <PanelContainer>
-        <div>
-          <Button color="bg-red-500" value="Delete" />
-        </div>
-      </PanelContainer>
-      <PanelContainer>
         <div className="flex items-center">
           <div className="mr-5 flex-grow">
             <SearchBar placeholder="Search for user" />
@@ -36,6 +29,22 @@ export default function Users() {
           >
             Roles
             <IoIosArrowDropdown className="inline ml-2" />
+          </div>
+        </div>
+      </PanelContainer>
+      <PanelContainer>
+        <div className="flex">
+          <div className="w-32 mr-10">
+            <Button color="bg-sky-500" value="Select All" />
+          </div>
+          <div className="w-32 mr-10">
+            <Button color="bg-blue-500" value="Assign Role" />
+          </div>
+          <div className="w-40 mr-10">
+            <Button color="bg-green-500" value="Assign Tag" />
+          </div>
+          <div className="w-32 ">
+            <Button color="bg-red-500" value="Delete" />
           </div>
         </div>
       </PanelContainer>
@@ -72,9 +81,13 @@ function User(props: { onClick: Function; onSelect: Function }) {
       onSelect={onSelect}
       onClick={props.onClick}
     >
-      <div>checkboxcheck</div>
       <div className="flex">
         <h1 className="">wouter.wouter@wouter.nl</h1>
+      </div>
+      <div className="flex items-center">
+        <Tag>#tag</Tag>
+        <Tag>#tag</Tag>
+        <Tag>#tag</Tag>
       </div>
       <div className="flex items-center">
         <RoleElement>Admin</RoleElement>
