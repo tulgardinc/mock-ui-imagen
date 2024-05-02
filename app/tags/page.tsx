@@ -135,11 +135,10 @@ function ExtendableTag() {
             </div>
             <div>
               <span>Children: </span>
-              <Tag />
-              <Tag />
-              <Tag />
-              <Tag />
-              <Tag />
+              <Tag removeable={true} />
+              <Tag removeable={true} />
+              <Tag removeable={true} />
+              <Tag removeable={true} />
               <span className="text-gray-500 box-border border-gray-500 border-2 inline-block m-1 py-0.5 px-2 rounded">
                 Add
                 <IoIosAddCircleOutline className="inline ml-1 text-gray-500" />
@@ -147,9 +146,9 @@ function ExtendableTag() {
             </div>
             <div>
               <span>Parents: </span>
-              <Tag />
-              <Tag />
-              <Tag />
+              <Tag removeable={true} />
+              <Tag removeable={true} />
+              <Tag removeable={true} />
               <span className="text-gray-500 box-border border-gray-500 border-2 inline-block m-1 py-0.5 px-2 rounded">
                 Add
                 <IoIosAddCircleOutline className="inline ml-1 text-gray-500" />
