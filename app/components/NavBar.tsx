@@ -54,8 +54,12 @@ export default function NavBar() {
         router.push("/train");
         break;
       case "scientist":
-        setNavLinks([upload, run, runResults]);
+        setNavLinks([run, runResults]);
         router.push("/run");
+        break;
+      case "partner":
+        setNavLinks([runResults]);
+        router.push("/runresults");
         break;
     }
   };
@@ -77,6 +81,7 @@ export default function NavBar() {
           <option value="anotator">Data Anotator</option>
           <option value="researcher">AI Researcher</option>
           <option value="scientist">Behavioral Scientist</option>
+          <option value="partner">Industrial Partner</option>
         </select>
       </div>
     </nav>
